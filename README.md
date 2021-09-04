@@ -67,6 +67,14 @@ Hybrid assembly with Wengan
 There have some necessary shellfile need to download  
 Shellfile : https://github.com/sumoii/WENGANassemble.git
 ```
+bin
+|-- afterPurify_quast.sh
+|-- createassmbelyfile.sh
+|-- pre_quast.sh
+|-- Purify.sh
+`-- quast.sh
+```
+```
 $ cd usr/software
 $ git clone https://github.com/sumoii/WENGANassemble.git
 $ vi ~/.bashrc
