@@ -3,12 +3,12 @@
 helpdoc(){
 cat << EOF
 Description:
-	Prepare of quast
+	Prepare for quast
 
 Option:
 	-r The path of reference genomic
-	-1 name1
-	-2 name2
+        -1 <The first name of your contigs prefix>
+        -2 <The other name of your contigs prefix>
 	-m The model you choose
 EOF
 }

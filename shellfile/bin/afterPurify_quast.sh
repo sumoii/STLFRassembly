@@ -35,9 +35,12 @@ fi
 
 mkdir ${name1}_${name2}_${model}_quast_afterPurify
 cd ${name1}_${name2}_${model}_quast_afterPurify
-
+echo "Running..."
 while read line
 do 
+echo "..."
+echo "....."
+echo "......."
 str=${line##*/}
 str=${str%.*}
 nohup python3 $path \
@@ -46,4 +49,4 @@ nohup python3 $path \
 -t 40 \
 -o ${str}_afterPurify.quast 2>run.err >run.log &
 done < ../${name1}_${name2}_${model}_quast/genomic.txt 
-
+echo "done!"

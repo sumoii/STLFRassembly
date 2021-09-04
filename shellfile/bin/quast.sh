@@ -4,10 +4,10 @@
 helpdoc(){
 cat << EOF
 Description:
-        Prepare of quast
+        Quast of assembled genomic
 
 Option:
-        -f The path of abssebly file
+        -f The path of assembled file
         -q The path of quast.py
 EOF
 }

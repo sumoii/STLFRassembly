@@ -8,8 +8,8 @@ Description:
 Option:
         -p the path of Purify
 	-r the path of assembled genomic
-	-1 the name of set before
-	-2 the name of set before
+        -1 <The first name of your contigs prefix>
+        -2 <The other name of your contigs prefix>
 	-m the model of set before
 EOF
 }
@@ -47,6 +47,8 @@ python3 $path \
 -purifySeq  $line\.fasta \
 -quastAlnTsv ../${name1}_${name2}_${model}_quast/$line\.quast/contigs_reports/all_alignments_${name1}_${name2}-SPolished-asm-wengan.tsv
 echo "......"
+echo "........"
+echo ".........."
 done < filename.txt
 
-echo "done"
+echo "done!"
