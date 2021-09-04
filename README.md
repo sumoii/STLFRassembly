@@ -69,7 +69,7 @@ Shellfile : https://github.com/sumoii/WENGANassemble.git
 ```
 bin
 |-- afterPurify_quast.sh
-|-- createassmbelyfile.sh
+|-- createassemblyfile.sh
 |-- pre_quast.sh
 |-- Purify.sh
 `-- quast.sh
@@ -84,7 +84,7 @@ All right ,then we can begin the process
 
 ### Assmeble
 ```
-$ sh createassmbelyfile.sh
+$ sh createassemblyfile.sh
 Usage:
         Creating the folder and preparing for assemble
 Option:
