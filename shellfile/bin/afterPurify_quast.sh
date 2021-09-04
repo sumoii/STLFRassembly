@@ -40,10 +40,10 @@ while read line
 do 
 str=${line##*/}
 str=${str%.*}
-nohup python3 $path \
+python3 $path \
 ../${name1}_${name2}_${model}_Purify/${str}.fasta \
 -r $line \
 -t 40 \
--o ${str}_afterPurify.quast 2>run.err >run.log &
+-o ${str}_afterPurify.quast 
 done < ../${name1}_${name2}_${model}_quast/genomic.txt
-echo "See the run.log" 
+echo "............................done!" 

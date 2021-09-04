@@ -46,9 +46,10 @@ str=$line
 str=${str##*/}
 str=${str%.*}
 echo $str >> filename.txt
-nohup python3 $quast $assembly \
+python3 $quast $assembly \
 -r $line \
 -t 40 \
--o ${str}.quast 2>run.err >run.log &
+-o ${str}.quast 
 done < genomic.txt
 
+echo ".....................................done!"
