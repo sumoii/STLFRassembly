@@ -33,11 +33,11 @@ There are some errors(as Abyss module) or if you have no errors that you may ign
 
 ```
 $ le ec_Wm_or1.minia.41.err
-/lib64/libstdc++.so.6: version `GLIBCXX_3.4.22' not found (required by /dellfsqd2/ST_OCEAN/USER/xiaogaohong/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
-/lib64/libstdc++.so.6: version `CXXABI_1.3.11' not found (required by /dellfsqd2/ST_OCEAN/USER/xiaogaohong/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
-/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by /dellfsqd2/ST_OCEAN/USER/xiaogaohong/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
-/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /dellfsqd2/ST_OCEAN/USER/xiaogaohong/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
-/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by /dellfsqd2/ST_OCEAN/USER/xiaogaohong/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.22' not found (required by usr/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
+/lib64/libstdc++.so.6: version `CXXABI_1.3.11' not found (required by usr/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by usr/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
+/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by usr/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by usr/software/wengan/wengan-v0.2-bin-Linux/bin/minia)
 ```
 That meanings the gcc /lib64/libstdc++.so.6 have no new GLIBCXX_ and CXXABI ,you need update the lib64
 
