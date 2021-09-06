@@ -1,4 +1,6 @@
-# WENGANassemble of Mockdata
+# Hybrid assembly of STLFR_Mockdata use WENGAN
+## Description:
+This page is tell you use WENGAN hybrid assembly STLFRdata of Mockdata
 
 
 Install Wengan and Create the environment  
