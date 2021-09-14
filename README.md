@@ -1,8 +1,13 @@
 # MetaSTHD Assembly Pineline 
 
 ## Description:
-This page is tell you use WENGAN hybrid assembly STLFRdata of WGSdata
+Hybrid de novo assembly process of metagenomic STLF and TGS data based on Wengan  
 
+The purpose of the pipline is that:  
+
+The co-barcoding information of stLFR and the short read are accurate ,which combine with the long read advantages of the three generations of data to improve the de novo assembly effect of the metagenome.  
+
+pi
 
 Install Wengan and Create the environment  
 -----------------------------------------
