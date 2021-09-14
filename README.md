@@ -10,10 +10,11 @@ The co-barcoding information of stLFR and the short reads are accurate ,which co
 ![image](https://user-images.githubusercontent.com/79637824/133183961-7d5d1af5-504a-428d-83fd-b93d6b302f7c.png)  
 
 ### The software are required:
-1 Python3 (version >2.7)
-2 metaWRAP
-3 quast
-4 perl 
+1. Python3 (version >2.7)  
+2. metaWRAP  
+3. quast  
+4. perl  
+5. WENGAN and CLOUDESPADES      
 
 Install Wengan and Create the environment  
 -----------------------------------------
