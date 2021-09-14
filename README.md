@@ -14,7 +14,8 @@ The co-barcoding information of stLFR and the short reads are accurate ,which co
 2. metaWRAP  
 3. quast  
 4. perl  
-5. WENGAN and CLOUDESPADES      
+5. WENGAN and CLOUDESPADES
+6. STLFRlongranger      
 
 Install Wengan and Create the environment  
 -----------------------------------------
