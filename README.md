@@ -5,9 +5,15 @@ Hybrid de novo assembly process of metagenomic STLF and TGS data based on Wengan
 
 The purpose of the pipline is that:  
 
-The co-barcoding information of stLFR and the short read are accurate ,which combine with the long read advantages of the three generations of data to improve the de novo assembly effect of the metagenome.  
+The co-barcoding information of stLFR and the short reads are accurate ,which combine with the long reads advantages of the three generations of data to improve the de novo assembly effect of the metagenome.  
 
-pi
+![image](https://user-images.githubusercontent.com/79637824/133183961-7d5d1af5-504a-428d-83fd-b93d6b302f7c.png)  
+
+### The software are required:
+1 Python3 (version >2.7)
+2 metaWRAP
+3 quast
+4 perl 
 
 Install Wengan and Create the environment  
 -----------------------------------------
