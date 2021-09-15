@@ -209,7 +209,7 @@ $ sh Step.4.2.1.binning.sh -1 Dataprepare/split_reads.1.fq.gz.clean.gz -2 Datapr
 -c 50 -x 10 -t 40 -l 1000
 ```
 
-### Result
+## Result
 ```
 $ tree -L 1
 .
