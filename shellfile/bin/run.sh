@@ -217,7 +217,7 @@ then
 fi
 
 
-if [ $allmethod == "right"  ];
+if [ $allmethod = "right"  ];
 then
 	echo "###############################" >>time.log
 	echo `date` Step.4.1.1.prequast.sh running >>time.log
@@ -260,7 +260,7 @@ exit 1
 
 fi
 
-if [ $method == "Quast"  ]
+if [ $method = "Quast"  ]
 then
 	echo "###############################" >>time.log
 	echo `date` Step.4.1.1.prequast.sh running >>time.log
