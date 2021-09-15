@@ -198,22 +198,27 @@ Option:
         -p <The path of quast>
  
 $ sh Step.4.1.4.afterpurifyquast.sh -1 ${name1} -2 ${name2} -m ${model} -p usr/software/quast/quast.py
-```
-## Binning  
+```  
+
+### Binning  
 ```
 $ sh Step.4.2.1.binning.sh -1 Dataprepare/split_reads.1.fq.gz.clean.gz -2 Dataprepare/split_reads.2.fq.gz.clean.gz \
--o ${name1}_${name2}_binning \
+-o ${name1}_${name2}_${model}_binning \
 -M usr/software/metaWRAP \
 -c 50 -x 10 -t 40 -l 1000
-```  
+```
+
 ### Result
 ```
 $ tree -L 1
 .
+|-- WTDBG_contigs
+|-- STLFR_CLOUDSPADES_contigs
 |-- STLFR_CLOUDSPADES_WTDBG_A_assemble
 |-- STLFR_CLOUDSPADES_WTDBG_A_Purify
 |-- STLFR_CLOUDSPADES_WTDBG_A_quast
-`-- STLFR_CLOUDSPADES_WTDBG_A_quast_afterPurify
+|-- STLFR_CLOUDSPADES_WTDBG_A_quast_afterPurify
+`-- STLFR_CLOUDSPADES_WTDBG_A_binning
 ```
 
 ```
@@ -243,7 +248,7 @@ $ tree -L 1
 |   |-- 562_genomic.quast
 |   |-- filename.txt
 |   `-- genomic.txt
-`-- STLFR_CLOUDSPADES_WTDBG_A_quast_afterPurify
+|-- STLFR_CLOUDSPADES_WTDBG_A_quast_afterPurify
     |-- 1280_genomic_afterPurify.quast
     |-- 1351_genomic_afterPurify.quast
     |-- 1423_genomic_afterPurify.quast
