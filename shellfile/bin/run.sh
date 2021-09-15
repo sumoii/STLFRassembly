@@ -21,12 +21,11 @@ helpdoc()
 		Binning The binning way
 			require the follow options
 			-b   The binning path (MeatWRAP)
-			-c   The checkm path
 	-A   Choose of all methed (binning and quast)
 EOF
 }
 
-while getopts ":l:1:2:f:s:t:m:g:w:L:M:p:r:q:b:A:h" opt
+while getopts ":l:1:2:f:s:t:m:g:x:w:L:M:r:q:b: A h" opt
 do
         case $opt in
 		l) longreads=$OPTARG;;
@@ -58,77 +57,66 @@ then
     exit 1
 fi
 
-if [ $name1 == NULL]
+if [ -z $name1 ]
 then
     name1="STLFR_CLOUDSPADES"
 fi
 
-if [ $name2 == NULL]
+if [ -z $name2 ]
 then
     name2="WTDBG"
 fi
 
-if [ $format == NULL ]
+if [ -z $format ]
 then
     format=ont
 fi
 
-if [ $model == NULL]
+if [ -z $model ] 
 then
     echo "The model of Wengan are requried"
     exit 1
 fi
 
-if [ $allmethod == right ]
+if [ $allmethod = "right" ]
 then
-    if [ $reference == NULL ]
+    if [ -z $reference ]
     then
         echo "The reference file folder are required"
         exit 1
     fi
-    if [ $quast == NULL ]
+    if [ -z $quast ]
     then
         echo "The quast path are required"
         exit 1
     fi
-    if [ $binning == NULL ]
+    if [ -z $binning ]
     then
         echo "The binning path are required"
-        exit 1
-    fi
-    if [ $checkm == NULL ]
-    then
-        echo "The checkm path are required"
         exit 1
     fi
 fi
 
 
-if [ $method == Quast]
+if [ $method = "Quast" ] 
 then
-    if [ $reference == NULL ]
+    if [ -z $reference ]
     then
 	echo "The reference file folder are required"
         exit 1
     fi
-
-    if [ $quast == NULL ]
+    if [ -z $quast ]
     then
 	echo "The quast path are required"
 	exit 1
     fi
 fi
 
-if [ $method == Binning ]
+if [ $method = "Binning" ]
 then
-    if [ $binning == NULL ]
+    if [ -z $binning ]
     then
 	echo "The binning path are required"
-	exit 1
-    fi
-    if [ $checkm == NULL ]
-    then
-	echo "The checkm path are required"
 	exit 1
     fi
 fi
@@ -247,7 +235,7 @@ then
 	echo "###############################" >>time.log
 	echo `date` Step.4.1.3.purify.sh running >>time.log
 	sh Step.4.1.3.purify.sh \
-	-p ${purify} \
+	-p ${atools}/contig_purify.py \
 	-r ${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
 	-1 ${name1} -2 ${name2} -m ${model} > purify.log
 	echo `date` Step.4.1.3.purify.sh end >>time.log
