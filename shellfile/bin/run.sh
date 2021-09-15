@@ -75,6 +75,18 @@ then
     format=ont
 fi
 
+if [ -z $cloudspades ]
+then
+    echo "The path of cloudespades are required"
+    exit 1
+fi
+
+if [ -z $wtdbg ]
+then
+    echo "The path of WTDBG are required"
+    exit 1
+fi
+
 if [ -z $model ] 
 then
     echo "The model of Wengan are requried"
