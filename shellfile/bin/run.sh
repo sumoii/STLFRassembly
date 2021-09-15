@@ -9,6 +9,8 @@ helpdoc()
 	-s   The other pirfix [default: WTDBG ]
 	-t   The threads number
 	-m   The model of Wengan
+	-c   The cloudspades path
+	-w   The wtdbg path
 	-g   The memory of set
 	-x   The longreads format [default : ont]
 	-w   The whitelist path
