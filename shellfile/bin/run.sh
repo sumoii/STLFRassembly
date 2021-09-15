@@ -25,7 +25,7 @@ helpdoc()
 EOF
 }
 
-while getopts ":l:1:2:f:s:t:m:g:x:w:L:M:r:q:b: A h" opt
+while getopts ":l:1:2:f:s:t:c:w:m:g:x:W:L:M:r:q:b: A h" opt
 do
         case $opt in
 		l) longreads=$OPTARG;;
@@ -33,16 +33,17 @@ do
 		2) shortreads2=$OPTARG;;
 		f) name1=$OPTARG;;
 		s) name2=$OPTARG;;
-		t) threads=$OPTRG;;
+		t) threads=$OPTARG;;
+		c) cloudspades=$OPTARG;;
+		w) wtdbg=$OPTARG;;
 		m) model=$OPTARG;;
 		g) memory=$OPTARG;;
 		x) format=$OPTARG;;
-		w) whitelist=$OPTARG;;
+		W) whitelist=$OPTARG;;
 		L) longranger=$OPTARG;;
 		r) reference=$OPTARG;;	
 		q) quast=$OPTARG;;
 		b) binning=$OPTARG;;
-		c) checkm=$OPTARG;;
 		M) method=$OPTARG;;
 		A) allmethod=right;;
                 h|help) helpdoc exit 1 ;;
