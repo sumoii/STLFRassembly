@@ -37,20 +37,28 @@ $ source ~/.bashrc
 Hybrid assembly with Wengan
 -----------------------------------  
 There have some necessary shellfile need to download  
-Shellfile : https://github.com/sumoii/WENGANassemble.git
+Shellfile : https://github.com/sumoii/STLFRassembly.git
 ```
 bin
-|-- afterPurify_quast.sh
-|-- createassemblyfile.sh
-|-- pre_quast.sh
-|-- Purify.sh
-`-- quast.sh
+|-- run.sh
+|-- Step.1.0.getsource.sh
+|-- Step.1.1.splitbarcode.sh
+|-- Step.1.2.getcleandata.sh
+|-- Step.1.3.stlfrto10x.sh
+|-- Step.2.1.stlfrcloudspades.sh
+|-- Step.2.2.ontwtdbg.sh
+|-- Step.3.1.wenganaseembly.sh
+|-- Step.4.1.1.prequast.sh
+|-- Step.4.1.2.quast.sh
+|-- Step.4.1.3.purify.sh
+|-- Step.4.1.4.afterpurifyquast.sh
+`-- Step.4.2.1.binning.sh
 ```
 ```
 $ cd usr/software
-$ git clone https://github.com/sumoii/WENGANassemble.git
+$ git clone https://github.com/sumoii/STLFRassembly.git
 $ vi ~/.bashrc
-export PATH="/usr/software/WENGANassemble/shellfile/bin:$PATH"
+export PATH="/usr/software/STLFRassembly/shellfile/bin:$PATH"
 ```
 All right ,then we can begin the process
 
