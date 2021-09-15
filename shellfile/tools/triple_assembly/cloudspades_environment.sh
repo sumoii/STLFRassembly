@@ -1,2 +1,0 @@
-source /dellfsqd1/ST_OCEAN/ST_OCEAN/USRS/guolidong/software/use_gcc820.sh #Suitable version GCC
-export PATH=/dellfsqd1/ST_OCEAN/ST_OCEAN/USRS/xumengyang/software/anaconda2/bin/:$PATH #Suitable version python2
