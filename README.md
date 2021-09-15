@@ -82,6 +82,7 @@ $ sh run.sh
 ```  
 
 ## or Step by Step  
+
 ### Data preprocessing
 
 ```
@@ -200,7 +201,7 @@ Option:
 $ sh Step.4.1.4.afterpurifyquast.sh -1 ${name1} -2 ${name2} -m ${model} -p usr/software/quast/quast.py
 ```  
 
-### Binning  
+## Binning  
 ```
 $ sh Step.4.2.1.binning.sh -1 Dataprepare/split_reads.1.fq.gz.clean.gz -2 Dataprepare/split_reads.2.fq.gz.clean.gz \
 -o ${name1}_${name2}_${model}_binning \
