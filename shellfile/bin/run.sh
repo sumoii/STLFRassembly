@@ -72,7 +72,7 @@ fi
 
 if [ -z $format ]
 then
-    format=ont
+    format="ont"
 fi
 
 if [ -z $cloudspades ]
@@ -93,7 +93,7 @@ then
     exit 1
 fi
 
-if [ $allmethod = "right" ]
+if [ "$allmethod" == "right" ]
 then
     if [ -z $reference ]
     then
@@ -113,7 +113,7 @@ then
 fi
 
 
-if [ $method = "Quast" ] 
+if [ "$method" = "Quast" ] 
 then
     if [ -z $reference ]
     then
@@ -127,7 +127,7 @@ then
     fi
 fi
 
-if [ $method = "Binning" ]
+if [ "$method" = "Binning" ]
 then
     if [ -z $binning ]
     then
@@ -164,7 +164,7 @@ fi
 
 echo "################################" >>time.log
 echo `date` Step.1.2.getcleandata.sh running >>time.log
-sh Step.1.2.getcleandata.sh -t $atools  -d Dataprepare -F CTGTCTCTTATACACATCTTAGGAAGACAAGCACTGACGACATGA -R TCTGCTGAGTCGAGAACGTCTCTGTGAGCCAAGGAGTTGCTCTGG -y -p -M 2 -f -1 -Q 10 -n 40 > cleandata.log
+sh Step.1.2.getcleandata.sh -t $atools  -d Dataprepare -F CTGTCTCTTATACACATCTTAGGAAGACAAGCACTGACGACATGA -R TCTGCTGAGTCGAGAACGTCTCTGTGAGCCAAGGAGTTGCTCTGG -y -p -M 2 -f -1 -Q 10 -n $threads > cleandata.log
 echo `date` Step.1.2.getcleandata.sh end >>time.log
 
 if [ `grep -c "Step.1.2.getcleandata.sh end" time.log` -eq '0' ]

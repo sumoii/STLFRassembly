@@ -25,7 +25,7 @@ EOF
 }
 
 
-while getopts ":d:t:n:F:R:M:Q:f:hyp" opt
+while getopts ":d:t:n:F:R:M:Q:f:h y p" opt
 do
         case $opt in
                 t) atools=$OPTARG;;
