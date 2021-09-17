@@ -83,4 +83,4 @@ mv read-I1_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_I
 mv read-R1_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_R1_001.fastq.gz
 mv read-R2_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_R2_001.fastq.gz
 
-$longranger basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=read_fastq/
+$longranger basic --localcores=$threads --localmem=$threads --id=longranger --fastqs=read_fastq/
