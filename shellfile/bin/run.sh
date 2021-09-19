@@ -175,8 +175,8 @@ fi
 
 echo "#################################" >>time.log
 echo `date` Step.1.3.stlfrto10x.sh running >>time.log
-sh Step.1.3.stlfrto10x.sh -a $atools -1 ../Dataprepare/split_reads.1.fq.gz.clean.gz -2 ../Dataprepare/split_reads.2.fq.gz.clean.gz \
--t $threads -w $whitelist -l $longranger -f 2 -m 8 -M $memory 
+sh Step.1.3.stlfrto10x.sh -a $atools -1 `pwd`/Dataprepare/split_reads.1.fq.gz.clean.gz -2 `pwd`/Dataprepare/split_reads.2.fq.gz.clean.gz \
+-t $threads -w $whitelist  -f 2 -m 8 -M $memory 
 echo `date` Step.1.3.stlfrto10x.sh end >>time.log
 
 if [ `grep -c "Step.1.3.stlfrto10x.sh end" time.log` -eq '0' ]
@@ -187,10 +187,11 @@ fi
 
 echo "###############################" >>time.log
 echo `date` Step.2.1.stlfrcloudspades.sh running >>time.log
-sh Step.2.1.stlfrcloudspades.sh -t $threads -f STLFR10X/longranger/outs/barcoded.fastq.gz \
+sh Step.2.1.stlfrcloudspades.sh -t $threads -f `pwd`STLFR10X/reads_floder \
 -o ${name1}_contigs \
 -c ${cloudspads} \
--m ${memory}
+-m ${memory} \
+-l ${longranger}
 
 echo `date` Step.2.1.stlfrcloudspades.sh end >>time.log
 
@@ -216,8 +217,8 @@ fi
 echo "###############################" >>time.log
 echo `date` Step.3.1.wenganaseembly.sh running >>time.log
 sh Step.3.1.wenganaseembly.sh -l $longreads  \
--s  `pwd`/Dataprepare/split_reads.1.fq.gz.clean.gz,`pwd`/Dataprepare/split_reads.2.fq.gz.clean.gz \
--f ${name1}_contigs/cloudspades_out/contigs.fasta  \
+-s `pwd`/Dataprepare/split_reads.1.fq.gz.clean.gz,`pwd`/Dataprepare/split_reads.2.fq.gz.clean.gz \
+-f `pwd`/${name1}_contigs/cloudspades_out/contigs.fasta  \
 -d ${name2}_contigs/WTDBG.fa  \
 -1 ${name1} -2 ${name2} -m ${model} -t 20 -g 3000 -x ontraw >wenganassemble.log 
 echo `date` Step.3.1.wenganaseembly.sh end >>time.log
@@ -242,7 +243,7 @@ then
 	echo `date` Step.4.1.2.quast.sh running >>time.log
 	cd ${name1}_${name2}_${model}_quast
 	sh Step.4.1.2.quast.sh \
-	-f ${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
+	-f ../${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
 	-q $quast >quast.log
 	cd ..
 	echo `date` Step.4.1.2.quast.sh end >>time.log
@@ -251,7 +252,7 @@ then
 	echo `date` Step.4.1.3.purify.sh running >>time.log
 	sh Step.4.1.3.purify.sh \
 	-p ${atools}/contig_purify.py \
-	-r ${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
+	-r ../${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
 	-1 ${name1} -2 ${name2} -m ${model} > purify.log
 	echo `date` Step.4.1.3.purify.sh end >>time.log
 
@@ -285,7 +286,7 @@ then
 	echo `date` Step.4.1.2.quast.sh running >>time.log
 	cd ${name1}_${name2}_${model}_quast
 	sh Step.4.1.2.quast.sh \
-	-f ${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
+	-f ../${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
 	-q $quast >quast.log
 	cd ..
 	echo `date` Step.4.1.2.quast.sh end >>time.log
@@ -294,7 +295,7 @@ then
 	echo `date` Step.4.1.3.purify.sh running >>time.log
 	sh Step.4.1.3.purify.sh \
 	-p ${purify} \
-	-r ${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
+	-r `pwd`/${name1}_${name2}_${model}_assemble/${name1}_${name2}.SPolished.asm.wengan.fasta \
 	-1 ${name1} -2 ${name2} -m ${model} > purify.log
 	echo `date` Step.4.1.3.purify.sh end >>time.log
 
@@ -308,9 +309,9 @@ then
 else 
 	echo "##############################" >> time.log
 	echo `date` Step.4.2.1.binning.sh running >>time.log
-	sh Step.4.2.1.binning.sh -1 Dataprepare/split_reads.1.fq.gz.clean.gz -2 Dataprepare/split_reads.2.fq.gz.clean.gz  \
+	sh Step.4.2.1.binning.sh -1 `pwd`/Dataprepare/split_reads.1.fq.gz.clean.gz -2 `pwd`/Dataprepare/split_reads.2.fq.gz.clean.gz  \
 	-o ${name1}_${name2}_${model}_binning \
 	-M $binning -c 50 -x 10 -t $threads -l 1000
-	echo `date` Step.4.2.1.binning.sh running >>time.log
+	echo `date` Step.4.2.1.binning.sh end >>time.log
 
 

@@ -12,7 +12,6 @@ Option:
         -2 The split_reads.1.fq.gz.clean.gz path
         -t The threads numbers [default: 8]
 	-w The whitelist path
-	-l The longranger path 
 	-f filter_num [default: 2]
 	-m mapratio_num [default: 8]
 	-M The memory number GB [default: 40]
@@ -20,14 +19,13 @@ EOF
 }
 
 
-while getopts ":a:1:2:t:w:l:f:m:M:h" opt
+while getopts ":a:1:2:t:w:f:m:M:h" opt
 do
         case $opt in
                 a) atools=$OPTARG;;
                 1) r1=$OPTARG;;
                 2) r2=$OPTARG;;
                 t) threads=$OPTARG;;
-		l) longranger=$OPTARG;;
 		w) whitelist=$OPTARG;;
 		f) filter_num=$OPTARG;;
 		m) mapratio_num=$OPTARG;;
@@ -83,4 +81,3 @@ mv read-I1_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_I
 mv read-R1_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_R1_001.fastq.gz
 mv read-R2_si-TTCACGCG_lane-001-chunk-001.fastq.gz  reads_fastq/sample_S1_L001_R2_001.fastq.gz
 
-$longranger basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=read_fastq/
