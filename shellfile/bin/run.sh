@@ -191,7 +191,7 @@ sh Step.2.1.stlfrcloudspades.sh -t $threads -f `pwd`STLFR10X/reads_floder \
 -o ${name1}_contigs \
 -c ${cloudspads} \
 -m ${memory} \
--l ${longranger}
+-l ${longranger} >shortassembly.log
 
 echo `date` Step.2.1.stlfrcloudspades.sh end >>time.log
 
