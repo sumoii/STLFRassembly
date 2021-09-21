@@ -37,12 +37,12 @@ then
     exit 1
 fi
 
-if [ $threads == NULL ]
+if [ -z $threads ]
 then
     threads="40"
 fi
 
-if [ $memory == NULL ]
+if [ -z $memory ]
 then
     memory="250"
 fi
@@ -50,6 +50,6 @@ fi
 mkdir $output
 cd $output
 
-$longranger basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=$file
+$longranger basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=$file 
 
-$cloudspades --gemcode1-12 longranfer/outs/barcoded.fastq.gz -o cloudspades_out -t $threads -m $memory
+$cloudspades --gemcode1-12 longranfer/outs/barcoded.fastq.gz -o cloudspades_out -t $threads -m $memory 

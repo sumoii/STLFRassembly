@@ -13,7 +13,7 @@ helpdoc()
 	-w   The wtdbg path
 	-g   The memory of set
 	-x   The longreads format [default : ont]
-	-w   The whitelist path
+	-W   The whitelist path
 	-L   The longranger path
 	-M   The methed of you choose  [Quast or Binning]
 		Quast The quast way
@@ -195,7 +195,7 @@ sh Step.2.1.stlfrcloudspades.sh -t $threads -f `pwd`STLFR10X/reads_floder \
 
 echo `date` Step.2.1.stlfrcloudspades.sh end >>time.log
 
-if [ `grep -c "Step.2.1.stlfrcloudspades.sh end" time.log` -eq '0']
+if [ `grep -c "Step.2.1.stlfrcloudspades.sh end" time.log` -eq '0' ]
 then
     echo "The Step.2.1.stlfrcloudspades.sh error please cecheck the log file"
     exit 1
@@ -223,7 +223,7 @@ sh Step.3.1.wenganaseembly.sh -l $longreads  \
 -1 ${name1} -2 ${name2} -m ${model} -t 20 -g 3000 -x ontraw >wenganassemble.log 
 echo `date` Step.3.1.wenganaseembly.sh end >>time.log
 
-if [ `grep -c "Step.3.1.wenganaseembly.sh end" time.log` -eq '0']
+if [ `grep -c "Step.3.1.wenganaseembly.sh end" time.log` -eq '0' ]
 then
     echo "The Step.3.1.wenganaseembly.sh error please cecheck the log file"
     exit 1
@@ -313,5 +313,5 @@ else
 	-o ${name1}_${name2}_${model}_binning \
 	-M $binning -c 50 -x 10 -t $threads -l 1000
 	echo `date` Step.4.2.1.binning.sh end >>time.log
-
+fi
 
