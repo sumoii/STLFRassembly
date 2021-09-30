@@ -50,6 +50,6 @@ fi
 mkdir $output
 cd $output
 
-${longranger} basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=$file --noexi
+${longranger} basic --localcores=$threads --localmem=$memory --id=longranger --fastqs=$file 
 
 $cloudspades --gemcode1-12 longranger/outs/barcoded.fastq.gz -o cloudspades_out -t $threads -m $memory
