@@ -187,7 +187,7 @@ fi
 
 echo "###############################" >>time.log
 echo `date` Step.2.1.stlfrcloudspades.sh running >>time.log
-sh Step.2.1.stlfrcloudspades.sh -t $threads -f `pwd`STLFR10X/reads_floder \
+sh Step.2.1.stlfrcloudspades.sh -t $threads -f `pwd`/STLFR10X/reads_floder \
 -o ${name1}_contigs \
 -c ${cloudspads} \
 -m ${memory} \
@@ -203,12 +203,12 @@ fi
 
 echo "###############################" >>time.log
 echo `date` Step.2.2.ontwtdbg.sh running >>time.log
-sh Step.2.2.ontwtdbg.sh  -w $wtdbg -t $threads -x $format\
+sh Step.2.2.ontwtdbg.sh  -w $wtdbg -t $threads -x $format \
 -l $longreads  \
 -o ${name2}_contigs > longassembly.log
 echo `date` Step.2.2.ontwtdbg.sh end >>time.log
 
-if [ `grep -c "Step.2.2.ontwtdbg.sh end" time.log` -eq '0']
+if [ `grep -c "Step.2.2.ontwtdbg.sh end" time.log` -eq '0' ]
 then
     echo "The Step.2.2.ontwtdbg.sh error please cecheck the log file"
     exit 1
