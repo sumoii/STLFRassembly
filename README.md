@@ -117,14 +117,12 @@ Option:
         -2 The split_reads.1.fq.gz.clean.gz path
         -t The threads numbers [default: 40]
         -w The whitelist path
-        -l The longranger path
         -f filter_num [default: 2]
         -m mapratio_num [default: 8]
         -M The memory number GB [default: 300]  
         
 $ sh Step.1.3.stlfrto10x.sh -a $atools -1 Dataprepare/split_reads.1.fq.gz.clean.gz  -2 Dataprepare/split_reads.1.fq.gz.clean.gz \
 -w usr/database/whitelist \
--l usr/software/longranger4stLFR/longranger \
 -f 2 -m 8 -M 300 -t 40
 ```
 
