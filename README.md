@@ -134,7 +134,7 @@ $ name2="WTDBG"
 $ model="A"
 ```
 ```
-$ sh Step.2.1.stlfrcloudspades.sh -f STLFR10X/longranger/out/barcoded.fastq.gz -o ${name1}_contigs -t 8 -m 250
+$ sh Step.2.1.stlfrcloudspades.sh -f STLFR10X/longranger/out/barcoded.fastq.gz -o ${name1}_contigs -t 8 -m 250 -l longranger/to/path
 $ sh Step.2.2.ontwtdbg.sh -l $longreads -w usr/software/wtdbg -t 40 -x ont 
 ```
 #### WENGAN
